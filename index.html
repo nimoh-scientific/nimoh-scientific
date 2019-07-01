@@ -14,8 +14,19 @@
 <body data-spy="scroll" data-target="#navbar1" data-offset="60">
     <script>
         $(document).ready(function () {
+		
+			var offset = 60;
+			
             $('.navbar-nav>li>a').on('click', function () {
+				event.preventDefault();
+				
+				// hide the context menu
                 $('.navbar-collapse').collapse('hide');
+				
+				// scroll to the section requested
+				$($(this).attr('href'))[0].scrollIntoView();
+				scrollBy(0, -offset);				
+				
             });
         });
     </script>
@@ -104,7 +115,6 @@
 										<br />
 										For the modern professional rifleman, sniper, sporting shooter or marksmanship aficionado what this means is truly augmented-reality, smart,
 										small arms ballistics applications, accessible to all through intelligent modifications of pre-existing target acquisition technologies.
-
 									</p>
 
 									<div class="text-center">
@@ -127,10 +137,11 @@
         <!-- **************************************************************************************************************** -->
         <!-- Company -->
         <!-- **************************************************************************************************************** -->
-        <div class="container py-5">
+        <div class="container pb-5">
             <div class="row min-vh-100">
                 <div class="d-flex flex-column">
 					<section id="company">
+					
 						<div class="card">
 							<div class="card-body">
 								<div class="justify-content-center align-items-center">
