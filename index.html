@@ -15,17 +15,19 @@
     <script>
         $(document).ready(function () {
 
-			var offset = 60;
+            var offset = 60;
 
             $('.navbar-nav>li>a').on('click', function () {
-				event.preventDefault();
+                var href = $(this).attr('href');
+                event.preventDefault();
+                window.location.hash = href;
 
-				// hide the context menu
+                // hide the context menu
                 $('.navbar-collapse').collapse('hide');
 
-				// scroll to the section requested
-				$($(this).attr('href'))[0].scrollIntoView();
-				scrollBy(0, -offset);
+                // scroll to the section requested
+                $(href)[0].scrollIntoView();
+                window.scrollBy(0, -offset);
 
             });
         });
@@ -151,20 +153,20 @@
                                     </p>
 
                                     <h4 class="text-primary text-center px-3">
-										"Nimoh® Scientific is a breeding ground for turning innovative ideas into tangible products."
-									</h4>
+                                        "Nimoh® Scientific is a breeding ground for turning innovative ideas into tangible products."
+                                    </h4>
 
                                     <p>
                                         All of the technologies built by Nimoh® Scientific, slowly taking shape and turning into real products used by real people world-wide, have been
-                                        initially brewing as Research and Development projects covering the best part of two decades.  The core philosophy behind every tool originating
+                                        initially brewing as Research and Development projects some going back almost two decades.  The core philosophy behind every tool originating
                                         from Nimoh® Scientific is that each digital instrument incorporates at least one discerning, novel idea not seen anywhere else previously.
                                         <br />
                                         At present, the sole permanent researcher, designer, developer and director is myself, Kofi Nimoh.
-					<div>
-						<img src="/images/misc/kofinimoh.jpg" alt="Kofi Nimoh" class="img-fluid float-left mx-2 my-2">
-					</div>
+                                        <div>
+                                            <img src="/images/misc/kofinimoh.jpg" alt="Kofi Nimoh" class="img-fluid float-left mx-2 my-2">
+                                        </div>
                                         In this capacity I have to-date been the only creator of all the products, manuals and online presence for Nimoh® Scientific, whilst outsourcing
-                                        peripheral activities such as language translations, some particularly specialised testing, and all artwork.
+                                        peripheral activities such as language translations, some particularly specialised prototyping and testing, and all artwork.
                                         <br />
                                         As such, personal experience – i.e. mine, is the guide-star to all nascent incubating ideas, and currently realised products, more often than not
                                         starting out as the proverbial personal “itch”.  The background to the ideas which subsequently become products means that the Nimoh® Scientific
@@ -207,8 +209,8 @@
                     </span>
                 </div>
             </div>   <!-- class="row" -->
-			<div class="row d-flex justify-content-end">
-                   <span class="text-white text-right small font-weight-lighter">Website by <a class="text-white" target="_blank" href="https://nimoh.github.io">Nimoh Consulting</a></span>
+            <div class="row d-flex justify-content-end">
+                <span class="text-white text-right small font-weight-lighter">Website by <a class="text-white" target="_blank" href="https://nimoh.github.io">Nimoh Consulting</a></span>
             </div>   <!-- class="row" -->
         </div>
     </footer>
