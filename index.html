@@ -224,48 +224,61 @@
 		<!-- **************************************************************************************************************** -->
         <!-- Contact -->
         <!-- **************************************************************************************************************** -->
-        <section id="contact" class="container pb-5">
-            <div class="row min-vh-100">
-                <div class="min-vw-100">
+		<section id="contact" class="container pb-5">
+            <div class="row">
+                <div class="col-md-12">
                     <form role="form">
-					
-						<!-- Full Name -->
-                        <div class="form-group">
-                            <label class="col-xs-2 col-form-label form-control-label text-muted">Full Name:</label>
-                            <div class="col-xs-10">
-                                <input class="form-control" type="text" required="" placeholder="Firsname(s) Lastname(s)"/>
- 								<div class="invalid-feedback">
-                                  Full Name is required.
-                                </div>
-							</div>
-						</div>
-						
-						<!-- Email -->
-                        <div class="form-group">
-                            <label class="col-xs-2 col-form-label form-control-label text-muted">Email:</label>
-                            <div class="col-xs-10">
-                                <input class="form-control" type="text" required="" placeholder="YourEmail@YourDomain.org"/>
-								<div class="invalid-feedback">
-                                  Email is required.
+                        <div class="form-group row copyable">
+                            <label class="col-md-2 col-form-label form-control-label text-muted">First</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" value="Jane">
+                            </div>
+                            <label class="col-md-1 col-form-label form-control-label text-muted">Last</label>
+                            <div class="col-md-5">
+                                <input class="form-control" type="text" value="Bishop">
+                            </div>
+                        <a href="" class="copyable-trigger" data-original-title="" title="">&lt;&gt;</a></div>
+                        <div class="form-group row copyable">
+                            <label class="col-lg-2 col-form-label form-control-label text-muted">Address</label>
+                            <div class="col-lg-10">
+                                <input class="form-control" type="text" placeholder="Street">
+                            </div>
+                        <a href="" class="copyable-trigger" data-original-title="" title="">&lt;&gt;</a></div>
+                        <div class="form-group row copyable">
+                            <label class="col-lg-2 col-form-label form-control-label text-muted"></label>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" placeholder="City">
+                            </div>
+                            <div class="col-lg-4">
+                                <select class="form-control">
+                                    <option>State</option>
+                                    <option>AK</option>
+                                    <option>AZ</option>
+                                    <option>CA</option>
+                                    <option>CO</option>
+                                </select>
+                            </div>
+                        <a href="" class="copyable-trigger" data-original-title="" title="">&lt;&gt;</a></div>
+                        <div class="form-group row was-validated copyable">
+                            <label class="col-lg-2 col-form-label form-control-label text-muted">Username</label>
+                            <div class="col-lg-10">
+                                <input class="form-control" type="text" required="" id="un" name="un">
+                                <div class="invalid-feedback">
+                                  Username is required.
                                 </div>
                             </div>
-						</div>
-						
-						<!-- Message -->
-                        <div class="form-group">
-                            <label class="col-xs-2 col-form-label form-control-label text-muted">Message:</label>
-                            <div class="col-xs-10">
-                                <textarea class="form-control" rows="5" required="" placeholder="I would lilke to know more about..."></textarea>
-								<div class="invalid-feedback">
-                                  Message is required.
-                                </div>
-                            </div>
-						</div>
-						
-						<!-- Submit button -->
-                        <div class="form-group">
+                        <a href="" class="copyable-trigger" data-original-title="" title="">&lt;&gt;</a></div>
+                        <div class="form-group row copyable">
+                            <label class="col-lg-2 col-form-label form-control-label"></label>
+                            <div class="col-lg-10">
+                                <input type="reset" class="btn btn-outline-secondary mr-2 copyable" value="Cancel">
                                 <input type="button" class="btn btn-primary mr-2 copyable" value="Submit">
-                        </div>
+                                <div class="custom-control custom-checkbox d-inline">
+                                  <input type="checkbox" class="custom-control-input" id="customCheck" checked="">
+                                  <label class="custom-control-label" for="customCheck">Check me out</label>
+                                </div>
+                            </div>
+                        <a href="" class="copyable-trigger" data-original-title="" title="">&lt;&gt;</a></div>
                     </form>
                 </div>
             </div>
