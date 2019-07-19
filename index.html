@@ -15,10 +15,14 @@
 <body data-spy="scroll" data-target="#navbar1" data-offset="120">
     <script>
 
-		function onReCaptchaSuccess(responseToken) {
-			var s = responseToken;
-	        document.getElementById("submitContactMessageButton").disabled = false;
-		}
+        function onReCaptchaSuccess(responseToken) {
+            var s = responseToken;
+            document.getElementById("submitContactMessageButton").disabled = false;
+        }
+
+        function onReCaptchaValidationExpiry() {
+            document.getElementById("submitContactMessageButton").disabled = true;
+        }
 
         function navigateToContactForm() {
 
@@ -46,8 +50,8 @@
                 window.scrollBy(0, -offset);
 
             });
-			
-			document.getElementById("submitContactMessageButton").disabled = true;
+
+            document.getElementById("submitContactMessageButton").disabled = true;
         });
     </script>
     <header class="bg-primary">
@@ -288,7 +292,11 @@
                             <div class="form-group row">
                                 <label class="col-lg-2 col-form-label form-control-label"></label>
                                 <div class="col-lg-10">
-                                    <div class="g-recaptcha" data-theme="dark" data-callback="onReCaptchaSuccess" data-sitekey="6LdpWa4UAAAAACmvUremm1oRVY0VwdrRiyhmJIdB"></div>
+                                    <div class="g-recaptcha"
+                                         data-theme="dark"
+                                         data-callback="onReCaptchaSuccess"
+                                         data-expired-callback="onReCaptchaValidationExpiry"
+                                         data-sitekey="6LdpWa4UAAAAACmvUremm1oRVY0VwdrRiyhmJIdB"></div>
                                 </div>
                             </div>
 
