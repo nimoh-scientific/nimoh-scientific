@@ -17,7 +17,7 @@
 
 		function onReCaptchaSuccess(responseToken) {
 			var s = responseToken;
-	        document.getElementbyId("submitContactMessageButton").disabled = false;
+	        document.getElementById("submitContactMessageButton").disabled = false;
 		}
 
         function navigateToContactForm() {
@@ -47,7 +47,7 @@
 
             });
 			
-			document.getElementbyId("submitContactMessageButton").disabled = true;
+			document.getElementById("submitContactMessageButton").disabled = true;
         });
     </script>
     <header class="bg-primary">
