@@ -22,15 +22,47 @@
 
         function onReCaptchaValidationExpiry() {
             document.getElementById("submitContactMessageButton").disabled = true;
+            notifyReCaptchaExpiry();
         }
 
         function navigateToContactForm() {
-
             var offset = 60;
             window.location.href = "#contact";
             var element = document.getElementById("contact");
             element.scrollIntoView();
             window.scrollBy(0, -offset);
+        }
+
+        function notifyMessageSentStatus() {
+            var title = "Message to Nimoh® Scientific sent!";
+            var notification1 = "Thank you for your message to Nimoh® Scientific, which has been sent successfully!  " +
+                "Please note, as per the instructions, irrelevant messages will <strong>not</strong> get a reply.";
+            var notification2 = "Please allow up to five (5) working days for a reply.";
+            setAndDisplayNotificationModal(title, notification1, notification2);
+        }
+
+        function notifyReCaptchaExpiry() {
+            var title = "reCAPTCHA Robot Check Expired";
+            var notification1 = "The robot-or-human validation check you previously completed successfuly has expired and you have not submitted your message!  " +
+                "You will need to re-validate using the reCAPTCHA section of the contact form and submit your message with the \"Submit\" button.";
+            var notification2 = "Please re-validate your status as a human to send your message.";
+            setAndDisplayNotificationModal(title, notification1, notification2);
+        }
+
+        function setAndDisplayNotificationModal(title, notification1, notification2) {
+
+            var notificationModalLabel = document.getElementById("notificationModalLabel");
+            var notificationModalPara1 = document.getElementById("notificationModalPara1");
+            var notificationModalPara2 = document.getElementById("notificationModalPara2");
+
+            notificationModalLabel.innerHTML = title;
+            notificationModalPara1.innerHTML = notification1;
+            notificationModalPara2.innerHTML = notification2;
+
+            $('#notificationModal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
         }
 
         $(document).ready(function () {
@@ -304,7 +336,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-2 col-form-label form-control-label"></label>
                                 <div class="col-lg-10">
-                                    <input id="submitContactMessageButton" type="button" class="btn btn-primary mr-2" value="Submit">
+                                     <button class="btn btn-primary mr-2" id="submitContactMessageButton" type="button" onclick="notifyMessageSentStatus()">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -349,5 +381,29 @@
             </div>   <!-- class="row" -->
         </div>
     </footer>
+	
+	   <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="notificationModalLabel">Message to Nimoh® Scientific sent!</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="notificationModalPara1">
+                        Your message to Nimoh® Scientific has been sent successfully!
+                        <br />
+                        Please note, as per the instructions, irrelevant messages will <strong>not</strong> get a reply.
+                    </p>
+                    <p id="notificationModalPara2">
+                        Please allow up to five (5) working days for a reply.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	
 </body>
 </html>
